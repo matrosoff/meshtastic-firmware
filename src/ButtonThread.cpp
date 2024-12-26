@@ -185,12 +185,12 @@ int32_t ButtonThread::runOnce()
                 }
                 break;
 #endif
-#if defined(USE_EINK) && defined(PIN_EINK_EN) // i.e. T-Echo
+/* #if defined(USE_EINK) && defined(PIN_EINK_EN) // i.e. T-Echo
             // 4 clicks: toggle backlight
             case 4:
                 digitalWrite(PIN_EINK_EN, digitalRead(PIN_EINK_EN) == LOW);
                 break;
-#endif
+#endif */
             // No valid multipress action
             default:
                 break;
@@ -229,6 +229,10 @@ int32_t ButtonThread::runOnce()
 
                 // Update display (legacy behaviour)
                 screen->forceDisplay();
+#if defined(USE_EINK) && defined(PIN_EINK_EN) // i.e. T-Echo
+                // toggle backlight
+                digitalWrite(PIN_EINK_EN, digitalRead(PIN_EINK_EN) == LOW);
+#endif
             }
             break;
         }

@@ -65,7 +65,7 @@ extern "C" {
 #define PIN_BUTTON_TOUCH (0 + 11) // 0.11 is the soft touch button on T-Echo
 
 #define BUTTON_CLICK_MS 400
-#define BUTTON_TOUCH_MS 200
+#define BUTTON_TOUCH_MS 2000 //200
 
 /*
  * Analog pins
